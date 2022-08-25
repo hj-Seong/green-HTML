@@ -34,6 +34,27 @@
         context.lineTo(200,100);
         context.stroke();
 
+        // 원을 그리는 방법
+        context.beginPath(); //Path를 먼저 시작하는것을 알린다
+        context.arc(95, 50, 40, 0, 2*Math.PI);//원의 Path지정
+        context.stroke();
+
+        // 글자 작성하는 방법
+        context.font ="30px Arial";
+        context.fillText("Hello World", 10, 50);
+        context.strokeText("Hello World", 10, 50);
+
+        // 그라디언트 넣는 법
+        // 그라디언트 생성
+        let grd = context.createRadialGradient(75, 50, 5, 90, 60, 100);
+        grd.addColorStop(0,"red");
+        grd.addColorStop(1,"white");
+
+        //그라디언트 사용
+        context.fillStyle = grd;
+        context.fillRect(10,10,150, 80);
+
+
     </script>
 </body>
 </html>
